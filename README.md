@@ -2,15 +2,11 @@
 
 This is a viber bot written in Python that acts as a virtual assistant. This was my final project for a python course for university. It uses no external dependencies other than the Viber bot API and FLASK to run the web server.
 
----
-
 ## Setup
 
 Install the requirements in `requirements.txt` and create your own bot in the Viber Admin Panel. Copy your authentication token and paste it in your `botConfiguration.py` file. Fill in the bot name and add a url to an image if you so desire. Go to `viber.json` and paste the token along with the url for your webhook (for example your ngrok url).
 
 Run `main.py` to start your bot.
-
----
 
 ## Functionality
 
