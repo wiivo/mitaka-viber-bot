@@ -6,7 +6,7 @@ This is a viber bot written in Python that acts as a virtual assistant. This was
 
 Install the requirements in `requirements.txt` and create your own bot in the Viber Admin Panel. Copy your authentication token and paste it in your `botConfiguration.py` file. Fill in the bot name and add a url to an image if you so desire. Go to `viber.json` and paste the token along with the url for your webhook (for example your ngrok url).
 
-Run `main.py` to start your bot.
+Run `main.py` to start your bot. The port of the FLASK server is 8087 but you can change it in `main.py`.
 
 ## Functionality
 

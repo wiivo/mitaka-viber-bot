@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 from flask import Flask, request, Response
 import logging
 
 from multiprocessing import Process
 import json
 import urllib.request
+import os
 
 from viberbot import Api
 from botConfiguration import botConfig
@@ -20,7 +22,7 @@ from functionality.interpreter import Interpreter
 # setWebhook sends a post request to the viber webhook url
 # curl -# -i -g -H "X-Viber-Auth-Token:token" -d @viber.json -X POST https://chatapi.viber.com/pa/set_webhook -v
 def setWebhook():
-    f = open('viber.json')
+    f = open(os.path.join(os.path.dirname(__file__),'viber.json'))
     data = json.load(f)
     data = json.dumps(data).encode("utf-8")
 
@@ -105,5 +107,6 @@ if __name__ == "__main__":
     # function to set webhook, runs in seperate process
     p = Process(target=setWebhook)
     p.start() 
+    # webhook port is 8087 but you can change it if you want
     app.run(port=8087, debug=True, use_reloader=False)
     p.join()
